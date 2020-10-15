@@ -1,0 +1,79 @@
+/*
+問題文の引用元：https://atcoder.jp/contests/abc031/tasks/abc031_b
+B - 運動管理Editorial
+Time Limit : 2 sec / Memory Limit : 256 MB
+問題文 : 高橋君は AtCoder
+社のマスコットキャラクターである。マスコットキャラクターとしての魅力を維持するために、高橋君は適度な運動をすることになっている。高橋君は週の運動時間が
+L 分以上 H
+分以下でなければならない。しかしながら、青木君は最近、高橋君が運動しているところを見ていない。高橋君の運動状況が気になった青木君は、高橋君の過去
+N
+週間の運動時間が制限にあっているのか、そして足りないなら少なくともあと何分運動する必要があったのかを計算するプログラムを作成することにした。入力入力は以下の形式で標準入力から与えられる。L
+HNA_1A_2:A_N1 行目には、2 個の整数 L, H (1≦L≦H≦10^4)
+が空白区切りで与えられる。これは、高橋君が週に L 分以上 H
+分以下の運動をしなければならないことを表す。2 行目には、整数 N (1≦N≦50)
+が与えられる。これは青木君が N 週分の運動時間について調べていることを表す。3
+行目からの N 行には、高橋君の運動状況を表す整数が与えられる。N 行の内 i (1≦i≦N)
+行目には、整数 A_i (0≦A_i≦10^4) が与えられる。これは i 個前の週において高橋君が
+A_i 分運動したことを表す。出力出力は N 行からなる。i (1≦i≦N) 行目には、i
+個前の週において高橋君が必要な分よりも多く運動している場合は -1
+を、そうでない場合は追加で必要な運動時間の最小値を分単位で 1
+行に出力せよ。出力の末尾にも改行を入れること。
+// ソースコードの引用元 : https://atcoder.jp/contests/abc031/submissions/4323605
+// 提出ID : 4323605
+// 問題ID : abc031_b
+// コンテストID : abc031
+// ユーザID : xryuseix
+// コード長 : 744
+// 実行時間 : 1
+
+
+
+*/
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <cstdio>
+#include <string>
+#include <vector>
+#include <list>
+#include <set>
+#include <cctype>
+#define ld long double
+#define ll long long int
+#define ull unsigned long long int
+using namespace std;
+template <class T> inline bool chmax(T &a, T b) {
+  if (a < b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+template <class T> inline bool chmin(T &a, T b) {
+  if (a > b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+const long long INF = 1LL << 60;
+// set<int>::iterator it;
+
+int main(void) {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int a, l, h, i, n;
+  cin >> l >> h >> n;
+  for (i = 0; i < n; i++) {
+    cin >> a;
+    if (a > h)
+      cout << -1 << endl;
+    else if (a < l)
+      cout << l - a << endl;
+    else
+      cout << 0 << endl;
+  }
+
+  return 0;
+}

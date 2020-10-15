@@ -1,0 +1,67 @@
+/*
+問題文の引用元：https://atcoder.jp/contests/colopl2018-qual/tasks/colopl2018_qual_a
+A - すぬけそだて――登録――Editorial
+Time Limit : 2 sec / Memory Limit : 256 MB
+配点 : 100 点
+問題文 :
+あなたは、育成シミュレーションゲーム「すぬけそだて」を入手しました。「すぬけそだて」では、あなたはひょんなことから路地裏で世界一賢いねこ「すぬけ君」との運命の出会いを果たします。拾いたてのすぬけ君はまだ体も貧弱で、ただにゃーにゃーと鳴いているばかりです。しかし成長するにつれ、すぬけ君のできることはどんどん増えていきます。お手、ジャンプ、ネズミ取り、洗濯、引越し作業、競技プログラミング、ゲーム制作、確定申告、起業……すぬけ君の可能性は無限大です！　賢くて、少し変わったねこと一緒の、夢のような生活があなたを待っています！閑話休題。ところで、ゲームを始めるにあたって、あなたは自分の名前を決めなければいけません。名前として登録できるのは、A
+文字以上 B 文字以下の英小文字からなる文字列です。A,B
+とあなたの登録したい名前を表す文字列 S
+が与えられるので、その名前を登録できるかどうか判定してください。
+制約1 \leq A \leq B \leq 10A,B は整数である S の長さは 1 以上 10 以下であるS
+は英小文字からなる入力入力は以下の形式で標準入力から与えられる。A
+BS出力名前を登録できるなら YES を、そうでないなら NO を出力せよ。
+// ソースコードの引用元 :
+https://atcoder.jp/contests/colopl2018-qual/submissions/4240084
+// 提出ID : 4240084
+// 問題ID : colopl2018_qual_a
+// コンテストID : colopl2018-qual
+// ユーザID : xryuseix
+// コード長 : 643
+// 実行時間 : 1
+
+
+
+*/
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <cstdio>
+#include <string>
+#include <vector>
+#include <set>
+#include <cctype>
+#define ld long double
+#define ll long long int
+#define ull unsigned long long int
+using namespace std;
+template <class T> inline bool chmax(T &a, T b) {
+  if (a < b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+template <class T> inline bool chmin(T &a, T b) {
+  if (a > b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+const long long INF = 1LL << 60;
+
+int main(void) {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int a, b;
+  string s;
+  cin >> a >> b >> s;
+  if (a <= s.length() && b >= s.length())
+    cout << "YES" << endl;
+  else
+    cout << "NO" << endl;
+
+  return 0;
+}

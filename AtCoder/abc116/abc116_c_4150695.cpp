@@ -1,0 +1,65 @@
+/*
+問題文の引用元：https://atcoder.jp/contests/abc116/tasks/abc116_c
+C - Grand GardenEditorial
+Time Limit : 2 sec / Memory Limit : 1024 MB
+配点 : 300 点
+問題文 : 花壇に N 本の花が咲いており、それぞれ 1,2,......,N
+と番号が振られています。最初、全ての花の高さは 0 です。数列
+h=\{h_1,h_2,h_3,......\}
+が入力として与えられます。以下の「水やり」操作を繰り返すことで、すべての k(1
+\leqq  k \leqq N) に対して花 k の高さを h_k にしたいです。整数 l,r を指定する。l
+\leqq x \leqq r を満たすすべての x に対して、花 x の高さを 1
+高くする。条件を満たすための最小の「水やり」操作の回数を求めてください。
+制約1 \leqq N  \leqq 1000 \leqq h_i \leqq
+100入力はすべて整数である。入力入力は以下の形式で標準入力から与えられます。Nh_1
+h_2 h_3 ......
+h_N出力条件を満たすような最小の「水やり」操作の回数を出力してください。
+// ソースコードの引用元 : https://atcoder.jp/contests/abc116/submissions/4150695
+// 提出ID : 4150695
+// 問題ID : abc116_c
+// コンテストID : abc116
+// ユーザID : xryuseix
+// コード長 : 533
+// 実行時間 : 1
+
+
+
+*/
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <cstdio>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main(void) {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int n, i, j, k;
+  cin >> n;
+  int h[n];
+  for (i = 0; i < n; i++)
+    cin >> h[i];
+  int place = 0, ans = 0;
+  for (i = 0; i < n - 1; i++) {
+    if (h[i] <= 0)
+      continue;
+    for (k = 0; k < h[i]; k++) {
+      ans++;
+      j = i + 1;
+      while (1) {
+        h[j]--;
+        if (h[j] < 0)
+          break;
+        j++;
+      }
+    }
+    //		cout<<ans<<endl;
+  }
+  if (h[n - 1] > 0)
+    ans += h[n - 1];
+  cout << ans << endl;
+  return 0;
+}

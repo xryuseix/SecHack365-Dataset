@@ -1,0 +1,93 @@
+/*
+問題文の引用元：https://atcoder.jp/contests/abc081/tasks/abc081_b
+B - Shift onlyEditorial
+Time Limit : 2 sec / Memory Limit : 256 MB
+配点 : 200 点
+問題文 : 黒板に N 個の正の整数 A_1, ..., A_N
+が書かれています．すぬけ君は，黒板に書かれている整数がすべて偶数であるとき，次の操作を行うことができます．黒板に書かれている整数すべてを，2
+で割ったものに置き換える．すぬけ君は最大で何回操作を行うことができるかを求めてください．
+制約1 \leq N \leq 2001 \leq A_i \leq
+10^9入力入力は以下の形式で標準入力から与えられる。NA_1 A_2 ...
+A_N出力すぬけ君は最大で何回操作を行うことができるかを出力せよ．
+// ソースコードの引用元 : https://atcoder.jp/contests/abc081/submissions/5795987
+// 提出ID : 5795987
+// 問題ID : abc081_b
+// コンテストID : abc081
+// ユーザID : xryuseix
+// コード長 : 1398
+// 実行時間 : 1
+
+
+
+*/
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <list>
+#include <set>
+#include <map>
+#include <queue>
+#include <stack>
+#include <cctype>
+#include <climits>
+#include <bitset>
+#define ld long double
+#define ll long long int
+#define ull unsigned long long int
+#define rep(i, n) for (i = 0; i < n; i++)
+#define fin(ans) cout << (ans) << endl
+#define INF INT_MAX
+#define vi vector<int>
+#define vc vector<char>
+#define vs vector<string>
+#define vpii vector<pair<int, int>>
+#define vvi vector<vector<int>>
+#define vvc vector<vector<char>>
+#define vvs vector<vector<string>>
+#define P 1000000007
+using namespace std;
+template <class T> inline bool chmax(T &a, T b) {
+  if (a < b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+template <class T> inline bool chmin(T &a, T b) {
+  if (a > b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+const long long LLINF = 1LL << 60;
+// set<int>::iterator it;
+//|\_
+// g++ -std=c++1z temp.cpp
+//./a.out
+
+int main(void) {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  //////////////////////////////////////////////////////
+  int i, n, t, y;
+  cin >> n;
+  vector<int> v(n, 0);
+  rep(i, n) {
+    cin >> t;
+    y = 0;
+    while (t % 2 == 0) {
+      t /= 2;
+      y++;
+    }
+    v[i] = y;
+  }
+  sort(v.begin(), v.end());
+  cout << v[0] << endl;
+
+  //////////////////////////////////////////////////////
+  return 0;
+}

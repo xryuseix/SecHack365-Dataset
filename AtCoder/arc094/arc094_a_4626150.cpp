@@ -1,0 +1,86 @@
+/*
+問題文の引用元：https://atcoder.jp/contests/arc094/tasks/arc094_a
+C - Same IntegersEditorial
+Time Limit : 2 sec / Memory Limit : 256 MB
+配点 : 300 点
+問題文 : 3 つの整数 A,B,C が与えられます。以下の 2
+種類の操作を好きな順で繰り返して A,B,C
+をすべて等しくするために必要な操作の最小回数を求めてください。A,B,C のうち 2
+つを選んで、その両方を 1 増やすA,B,C のうち 1 つを選んで、その整数を 2
+増やすなお、これらの操作を繰り返して A,B,C
+をすべて等しくできることは証明できます。
+制約0 \leq A,B,C \leq
+50入力はすべて整数である入力入力は以下の形式で標準入力から与えられる。A B
+C出力A,B,C をすべて等しくするために必要な操作の最小回数を出力せよ。
+// ソースコードの引用元 : https://atcoder.jp/contests/arc094/submissions/4626150
+// 提出ID : 4626150
+// 問題ID : arc094_a
+// コンテストID : arc094
+// ユーザID : xryuseix
+// コード長 : 1072
+// 実行時間 : 1
+
+
+
+*/
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <list>
+#include <set>
+#include <map>
+#include <queue>
+#include <stack>
+#include <cctype>
+#include <climits>
+#define ld long double
+#define ll long long int
+#define ull unsigned long long int
+#define rep(i, n) for (i = 0; i < n; i++)
+#define fin(ans) cout << (ans) << endl
+#define INF INT_MAX;
+using namespace std;
+template <class T> inline bool chmax(T &a, T b) {
+  if (a < b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+template <class T> inline bool chmin(T &a, T b) {
+  if (a > b) {
+    a = b;
+    return 1;
+  }
+  return 0;
+}
+const long long LLINF = 1LL << 60;
+// set<int>::iterator it;
+
+int main(void) {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  //////////////////////////////////////////////////////
+
+  int a[3], ans = 0;
+  ;
+  cin >> a[0] >> a[1] >> a[2];
+  while (a[0] != a[1] || a[0] != a[2]) {
+    sort(a, a + 3);
+    if (a[0] == a[1]) {
+      a[0]++;
+      a[1]++;
+      ans++;
+    } else {
+      a[0] += 2;
+      ans++;
+    }
+  }
+  cout << ans << endl;
+
+  //////////////////////////////////////////////////////
+  return 0;
+}
